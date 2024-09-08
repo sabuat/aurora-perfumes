@@ -8,19 +8,19 @@ const link_1 = {
 };
 const link_2 = {
   name: "Sobre",
-  caminho: "/about",
+  caminho: "/sobre",
 };
 const link_3 = {
-  name: "Cursos",
-  caminho: "/cursos",
+  name: "Loja",
+  caminho: "/loja",
 };
 const link_4 = {
-  name: "Contato",
-  caminho: "/contact",
-};
-const link_5 = {
   name: "Blog",
   caminho: "/blog",
+};
+const link_5 = {
+  name: "Contato",
+  caminho: "/contact",
 };
 
 const logo = {
@@ -34,14 +34,7 @@ const logo = {
     <a class="navbar-brand" href="/">
       <ImagemBarra caminho={logo.caminho} alter={logo.alter} />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapsibleNavbar"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -61,5 +54,54 @@ const logo = {
         </li>
       </ul>
     </div>
+
+    <button
+        class="navbar-toggler d-block d-lg-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+    >
+      <span class="material-symbols-outlined fs-1"> menu </span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <a class="navbar-brand" href="{{ url_for ('home')}}">
+          <img src="../static/images/logo-barra.png" />
+        </a>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body text-center">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={link_1.caminho}>{link_1.name}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={link_2.caminho}>{link_2.name}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={link_3.caminho}>{link_3.name}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={link_4.caminho}>{link_4.name}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={link_5.caminho}>{link_5.name}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
+
+
