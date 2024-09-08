@@ -3,6 +3,10 @@ import Barra from "./Barra.astro"
 import "../styles/paginas.css"
 
 const {titulo} = Astro.props;
+
+const barra = {
+    nome:"barra-nav",
+};
 ---
 
 <html lang="en">
@@ -24,7 +28,7 @@ const {titulo} = Astro.props;
 		<title>{titulo}</title>
 	</head>
 	<body>
-		<Barra></Barra>
+		<Barra id={barra.nome}></Barra>
 	</body>
 </html>
 

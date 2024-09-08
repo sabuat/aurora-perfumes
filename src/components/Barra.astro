@@ -2,6 +2,8 @@
 import Link from "./Link.astro";
 import ImagemBarra from "./ImagemBarra.astro";
 
+const {id} = Astro.props;
+
 const link_1 = {
   name: "Inicio",
   caminho: "/",
@@ -29,7 +31,7 @@ const logo = {
 };
 ---
 
-<nav class="navbar navbar-expand-sm bg-menu navbar-dark">
+<nav id={id} class="navbar navbar-expand-sm bg-menu navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <ImagemBarra caminho={logo.caminho} alter={logo.alter} />
