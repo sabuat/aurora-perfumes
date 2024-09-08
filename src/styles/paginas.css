@@ -5,7 +5,7 @@
   background-color: var(--branco-pampa);
 }
 
-.link-barra {
+#barra-nav .nav-link {
   text-decoration: none;
   font-family: var(--fonte-titulo);
   color: var(--vinho-escuro);
