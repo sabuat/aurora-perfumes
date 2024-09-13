@@ -5,35 +5,42 @@ import ImagemBarra from "./ImagemBarra.astro";
 const {id} = Astro.props;
 
 const link_1 = {
-  name: "Inicio",
+  name: "INICIO",
   caminho: "/",
 };
 const link_2 = {
-  name: "Sobre",
+  name: "SOBRE",
   caminho: "/sobre",
 };
 const link_3 = {
-  name: "Loja",
+  name: "LOJA",
   caminho: "/loja",
 };
 const link_4 = {
-  name: "Blog",
+  name: "BLOG",
   caminho: "/blog",
 };
 const link_5 = {
-  name: "Contato",
+  name: "CONTATO",
   caminho: "/contact",
 };
 
 const logo = {
   caminho: "/bases/logo-barra.png",
   alter: "Logo Aurora Perfumes",
+  route: "/"
+};
+
+const card = {
+  caminho: "/bases/cart.png",
+  alter: "Carrinho Aurora Perfumes",
+  route: "/"
 };
 ---
 
 <nav id={id} class="navbar navbar-expand-sm bg-menu navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href={logo.route}>
       <ImagemBarra caminho={logo.caminho} alter={logo.alter} />
     </a>
     
@@ -57,6 +64,7 @@ const logo = {
     >
       <span class="material-symbols-outlined fs-1"> menu </span>
     </button>
+
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
@@ -92,6 +100,12 @@ const logo = {
           </li>
         </ul>
       </div>
+    </div>
+
+    <div>
+      <a href={card.route}>
+        <ImagemBarra caminho={card.caminho} alter={card.alter} />
+      </a>
     </div>
   </div>
 </nav>
