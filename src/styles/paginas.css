@@ -3,6 +3,7 @@
 /* Barra */
 #barra-nav {
   background-color: var(--branco-fundo);
+  display: flex;
 }
 
 #barra-nav .nav-link {
