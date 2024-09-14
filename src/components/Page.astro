@@ -1,11 +1,16 @@
 ---
 import Barra from "./Barra.astro"
+import Quadro from "./Quadro.astro";
 import "../styles/paginas.css"
 
 const {titulo} = Astro.props;
 
 const barra = {
     nome:"barra-nav",
+};
+
+const fundo = {
+    color:"background-color: var(-primario-flush);",
 };
 ---
 
@@ -30,8 +35,7 @@ const barra = {
 	<body>
 		<Barra id={barra.nome}></Barra>
 	</body>
+    <footer>
+        <Quadro bg={fundo.color}></Quadro>
+    </footer>
 </html>
-
-
-
-</head>
